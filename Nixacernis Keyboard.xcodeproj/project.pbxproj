@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E96320221ADE44B00B9F234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96320121ADE44B00B9F234 /* AppDelegate.swift */; };
+		6E96320421ADE44B00B9F234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96320321ADE44B00B9F234 /* ViewController.swift */; };
+		6E96320721ADE44B00B9F234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E96320521ADE44B00B9F234 /* Main.storyboard */; };
+		6E96320921ADE44B00B9F234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E96320821ADE44B00B9F234 /* Assets.xcassets */; };
+		6E96320C21ADE44B00B9F234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E96320A21ADE44B00B9F234 /* LaunchScreen.storyboard */; };
+		6E96321A21ADE4B500B9F234 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96321921ADE4B500B9F234 /* KeyboardViewController.swift */; };
+		6E96321E21ADE4B500B9F234 /* Nixacernis.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6E96321721ADE4B500B9F234 /* Nixacernis.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E96321C21ADE4B500B9F234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E9631F621ADE44B00B9F234 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E96321621ADE4B500B9F234;
+			remoteInfo = Nixacernis;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E96322221ADE4B500B9F234 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6E96321E21ADE4B500B9F234 /* Nixacernis.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6E9631FE21ADE44B00B9F234 /* Nixacernis Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nixacernis Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E96320121ADE44B00B9F234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6E96320321ADE44B00B9F234 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E96320621ADE44B00B9F234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E96320821ADE44B00B9F234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E96320B21ADE44B00B9F234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6E96320D21ADE44B00B9F234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E96321721ADE4B500B9F234 /* Nixacernis.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Nixacernis.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E96321921ADE4B500B9F234 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		6E96321B21ADE4B500B9F234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E9631FB21ADE44B00B9F234 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E96321421ADE4B500B9F234 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E9631F521ADE44B00B9F234 = {
+			isa = PBXGroup;
+			children = (
+				6E96320021ADE44B00B9F234 /* Nixacernis Keyboard */,
+				6E96321821ADE4B500B9F234 /* Nixacernis */,
+				6E9631FF21ADE44B00B9F234 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E9631FF21ADE44B00B9F234 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E9631FE21ADE44B00B9F234 /* Nixacernis Keyboard.app */,
+				6E96321721ADE4B500B9F234 /* Nixacernis.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E96320021ADE44B00B9F234 /* Nixacernis Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6E96320121ADE44B00B9F234 /* AppDelegate.swift */,
+				6E96320321ADE44B00B9F234 /* ViewController.swift */,
+				6E96320521ADE44B00B9F234 /* Main.storyboard */,
+				6E96320821ADE44B00B9F234 /* Assets.xcassets */,
+				6E96320A21ADE44B00B9F234 /* LaunchScreen.storyboard */,
+				6E96320D21ADE44B00B9F234 /* Info.plist */,
+			);
+			path = "Nixacernis Keyboard";
+			sourceTree = "<group>";
+		};
+		6E96321821ADE4B500B9F234 /* Nixacernis */ = {
+			isa = PBXGroup;
+			children = (
+				6E96321921ADE4B500B9F234 /* KeyboardViewController.swift */,
+				6E96321B21ADE4B500B9F234 /* Info.plist */,
+			);
+			path = Nixacernis;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E9631FD21ADE44B00B9F234 /* Nixacernis Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E96321021ADE44B00B9F234 /* Build configuration list for PBXNativeTarget "Nixacernis Keyboard" */;
+			buildPhases = (
+				6E9631FA21ADE44B00B9F234 /* Sources */,
+				6E9631FB21ADE44B00B9F234 /* Frameworks */,
+				6E9631FC21ADE44B00B9F234 /* Resources */,
+				6E96322221ADE4B500B9F234 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E96321D21ADE4B500B9F234 /* PBXTargetDependency */,
+			);
+			name = "Nixacernis Keyboard";
+			productName = "Nixacernis Keyboard";
+			productReference = 6E9631FE21ADE44B00B9F234 /* Nixacernis Keyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E96321621ADE4B500B9F234 /* Nixacernis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E96321F21ADE4B500B9F234 /* Build configuration list for PBXNativeTarget "Nixacernis" */;
+			buildPhases = (
+				6E96321321ADE4B500B9F234 /* Sources */,
+				6E96321421ADE4B500B9F234 /* Frameworks */,
+				6E96321521ADE4B500B9F234 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nixacernis;
+			productName = Nixacernis;
+			productReference = 6E96321721ADE4B500B9F234 /* Nixacernis.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E9631F621ADE44B00B9F234 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				TargetAttributes = {
+					6E9631FD21ADE44B00B9F234 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					6E96321621ADE4B500B9F234 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6E9631F921ADE44B00B9F234 /* Build configuration list for PBXProject "Nixacernis Keyboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E9631F521ADE44B00B9F234;
+			productRefGroup = 6E9631FF21ADE44B00B9F234 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E9631FD21ADE44B00B9F234 /* Nixacernis Keyboard */,
+				6E96321621ADE4B500B9F234 /* Nixacernis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E9631FC21ADE44B00B9F234 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E96320C21ADE44B00B9F234 /* LaunchScreen.storyboard in Resources */,
+				6E96320921ADE44B00B9F234 /* Assets.xcassets in Resources */,
+				6E96320721ADE44B00B9F234 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E96321521ADE4B500B9F234 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E9631FA21ADE44B00B9F234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E96320421ADE44B00B9F234 /* ViewController.swift in Sources */,
+				6E96320221ADE44B00B9F234 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E96321321ADE4B500B9F234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E96321A21ADE4B500B9F234 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E96321D21ADE4B500B9F234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E96321621ADE4B500B9F234 /* Nixacernis */;
+			targetProxy = 6E96321C21ADE4B500B9F234 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E96320521ADE44B00B9F234 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E96320621ADE44B00B9F234 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E96320A21ADE44B00B9F234 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E96320B21ADE44B00B9F234 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E96320E21ADE44B00B9F234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E96320F21ADE44B00B9F234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E96321121ADE44B00B9F234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Nixacernis Keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pageanddeason.Nixacernis-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6E96321221ADE44B00B9F234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Nixacernis Keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pageanddeason.Nixacernis-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6E96322021ADE4B500B9F234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Nixacernis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pageanddeason.Nixacernis-Keyboard.Nixacernis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6E96322121ADE4B500B9F234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Nixacernis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pageanddeason.Nixacernis-Keyboard.Nixacernis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E9631F921ADE44B00B9F234 /* Build configuration list for PBXProject "Nixacernis Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E96320E21ADE44B00B9F234 /* Debug */,
+				6E96320F21ADE44B00B9F234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E96321021ADE44B00B9F234 /* Build configuration list for PBXNativeTarget "Nixacernis Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E96321121ADE44B00B9F234 /* Debug */,
+				6E96321221ADE44B00B9F234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E96321F21ADE4B500B9F234 /* Build configuration list for PBXNativeTarget "Nixacernis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E96322021ADE4B500B9F234 /* Debug */,
+				6E96322121ADE4B500B9F234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E9631F621ADE44B00B9F234 /* Project object */;
+}
