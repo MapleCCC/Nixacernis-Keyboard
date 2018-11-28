@@ -8,9 +8,27 @@
 
 import UIKit
 
-class KeyboardViewController: UIInputViewController {
+//class UIInputViewController : UIViewController, UITextInputDelegate, NSObjectProtocol {
+//    
+//    var inputView: UIInputView!
+//    
+//    var textDocumentProxy: NSObject! { get }
+//    
+//    func dismissKeyboard()
+//    func advanceToNextInputMode()
+//    
+//    // This will not provide a complete repository of a language's vocabulary.
+//    // It is solely intended to supplement existing lexicons.
+//    func requestSupplementaryLexiconWithCompletion(completionHandler: ((UILexicon!) -> Void)!)
+//}
 
-    @IBOutlet var nextKeyboardButton: UIButton!
+class KeyboardViewController: UIInputViewController {
+    
+    //MARK: Properties
+    var keyboardView: UIView!
+    
+    
+//    @IBOutlet var nextKeyboardButton: UIButton!
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -21,41 +39,31 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .system)
-        
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        loadKeyboardInterface()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated
+    func loadKeyboardInterface() {
+        let keyboardNib = UINib(nibName: "KeyboardView", bundle: nil)
+        keyboardView = keyboardNib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        view.addSubview(keyboardView)
+        view.backgroundColor = keyboardView.backgroundColor
     }
     
-    override func textWillChange(_ textInput: UITextInput?) {
-        // The app is about to change the document's contents. Perform any preparation here.
-    }
-    
-    override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
-        
-        var textColor: UIColor
-        let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
-            textColor = UIColor.white
-        } else {
-            textColor = UIColor.black
-        }
-        self.nextKeyboardButton.setTitleColor(textColor, for: [])
-    }
+//    override func textWillChange(_ textInput: UITextInput?) {
+//        // The app is about to change the document's contents. Perform any preparation here.
+//    }
+//    
+//    override func textDidChange(_ textInput: UITextInput?) {
+//        // The app has just changed the document's contents, the document context has been updated.
+//        
+//        var textColor: UIColor
+//        let proxy = self.textDocumentProxy
+//        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
+//            textColor = UIColor.white
+//        } else {
+//            textColor = UIColor.black
+//        }
+//        self.nextKeyboardButton.setTitleColor(textColor, for: [])
+//    }
 
 }
