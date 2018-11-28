@@ -8,6 +8,7 @@
 
 import UIKit
 
+//// The header of UIInputViewController class, comment here for convenient reference.
 //class UIInputViewController : UIViewController, UITextInputDelegate, NSObjectProtocol {
 //    
 //    var inputView: UIInputView!
@@ -28,13 +29,9 @@ class KeyboardViewController: UIInputViewController {
     var keyboardView: UIView!
     
     
-//    @IBOutlet var nextKeyboardButton: UIButton!
+    @IBOutlet var nextKeyboardButton: UIButton!
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +44,15 @@ class KeyboardViewController: UIInputViewController {
         keyboardView = keyboardNib.instantiate(withOwner: self, options: nil)[0] as! UIView
         view.addSubview(keyboardView)
         view.backgroundColor = keyboardView.backgroundColor
+        
+        nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), for: .touchUpInside)
+    }
+    
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        // Add custom view sizing constraints here
     }
     
 //    override func textWillChange(_ textInput: UITextInput?) {
