@@ -15,6 +15,7 @@
 		6E96321A21ADE4B500B9F234 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96321921ADE4B500B9F234 /* KeyboardViewController.swift */; };
 		6E96321E21ADE4B500B9F234 /* Nixacernis.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6E96321721ADE4B500B9F234 /* Nixacernis.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6E96322621AE01C900B9F234 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E96322521AE01C900B9F234 /* KeyboardView.xib */; };
+		6E96322821AE24C300B9F234 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96322721AE24C300B9F234 /* KeyboardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		6E96321921ADE4B500B9F234 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		6E96321B21ADE4B500B9F234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E96322521AE01C900B9F234 /* KeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		6E96322721AE24C300B9F234 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				6E96321921ADE4B500B9F234 /* KeyboardViewController.swift */,
 				6E96322521AE01C900B9F234 /* KeyboardView.xib */,
 				6E96321B21ADE4B500B9F234 /* Info.plist */,
+				6E96322721AE24C300B9F234 /* KeyboardModel.swift */,
 			);
 			path = Nixacernis;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E96322821AE24C300B9F234 /* KeyboardModel.swift in Sources */,
 				6E96321A21ADE4B500B9F234 /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

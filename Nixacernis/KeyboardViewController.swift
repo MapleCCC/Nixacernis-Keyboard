@@ -28,15 +28,59 @@ class KeyboardViewController: UIInputViewController {
     //MARK: Properties
     var keyboardView: UIView!
     
-    
     @IBOutlet var nextKeyboardButton: UIButton!
     
+    @IBOutlet weak var candidateList: UIStackView!
+    
+    @IBOutlet weak var typingSequence: UILabel!
+    
+    var userIsTyping: Bool = false
+    
+    //MARK: Actions
+    @IBAction func touchCandidateButton(_ sender: UIButton) {
+        textDocumentProxy.insertText(sender.currentTitle!)
+        resetDisplay()
+    }
+    
+    @IBAction func touchEnterButton(_ sender: UIButton) {
+        if userIsTyping == true {
+            let firstCandidate = candidateList.arrangedSubviews[0] as! UIButton
+            textDocumentProxy.insertText(firstCandidate.currentTitle!)
+            resetDisplay()
+        } else {
+            textDocumentProxy.insertText("\n")
+        }
+    }
+    
+    @IBAction func touchBackspaceButton(_ sender: UIButton) {
+        if userIsTyping == true {
+            var sequence = typingSequence.text!
+            sequence.remove(at: sequence.index(before: sequence.endIndex))
+            typingSequence.text = sequence
+            updateCandidateList()
+        } else {
+            textDocumentProxy.deleteBackward()
+        }
+    }
+    
+    @IBAction func touchKey(_ sender: UIButton) {
+        if userIsTyping == true {
+            typingSequence.text = typingSequence.text! + sender.currentTitle!
+            updateCandidateList()
+        } else {
+            typingSequence.text = sender.currentTitle!
+            updateCandidateList()
+        }
+    }
     
     
+    //MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadKeyboardInterface()
+        
+        resetDisplay()
     }
     
     func loadKeyboardInterface() {
@@ -47,6 +91,34 @@ class KeyboardViewController: UIInputViewController {
         
         nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), for: .touchUpInside)
     }
+    
+    func resetDisplay() {
+        let candidates = candidateList.arrangedSubviews
+        for candidate in candidates {
+            candidate.isHidden = true
+        }
+        
+        typingSequence.isHidden = true
+    }
+    
+    //MARK: Member functions
+    func updateCandidateList() {
+        
+        var queryResult = keyboardModel.getQueryResult(typingSequence)
+        var candidates = candidateList.arrangedSubviews
+        for candidate in candidates {
+            candidate.title = queryResult[]
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     override func updateViewConstraints() {
