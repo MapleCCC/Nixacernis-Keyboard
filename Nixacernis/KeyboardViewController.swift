@@ -30,110 +30,111 @@ class KeyboardViewController: UIInputViewController {
     
     @IBOutlet var nextKeyboardButton: UIButton!
     
-    @IBOutlet weak var candidateList: UIStackView!
-    
-    @IBOutlet weak var typingSequence: UILabel!
-    
-    var userIsTyping: Bool = false
-    
-    var pressedKeySequence = [String]()
-    
-    var keyboardModel = KeyboardModel()
-    
-    //MARK: Actions
-    @IBAction func touchCandidateButton(_ sender: UIButton) {
-        textDocumentProxy.insertText(sender.currentTitle!)
-        
-        resetKeyboard()
-    }
-    
-    @IBAction func touchEnterButton(_ sender: UIButton) {
-        if userIsTyping == true {
-            let firstCandidate = candidateList.arrangedSubviews[0] as! UIButton
-            textDocumentProxy.insertText(firstCandidate.currentTitle!)
-            
-            resetKeyboard()
-        } else {
-            textDocumentProxy.insertText("\n")
-        }
-    }
-    
-    @IBAction func touchBackspaceButton(_ sender: UIButton) {
-        if userIsTyping == true {
-            if pressedKeySequence.count == 1 {
-                resetKeyboard()
-            } else {
-                pressedKeySequence.removeLast()
-                updateDisplay()
-            }
-        } else {
-            textDocumentProxy.deleteBackward()
-        }
-    }
-    
-    @IBAction func touchKey(_ sender: UIButton) {
-        if userIsTyping == false {
-            pressedKeySequence = [sender.currentTitle!]
-            userIsTyping = true
-            beginDisplay()
-        } else {
-            pressedKeySequence.append(sender.currentTitle!)
-            updateDisplay()
-        }
-    }
-    
-    //MARK: Member functions
-    func beginDisplay() {
-        typingSequence.isHidden = false
-        
-        let candidates = candidateList.arrangedSubviews as! [UIButton]
-        for candidate in candidates {
-            candidate.isHidden = false
-        }
-        
-        updateDisplay()
-    }
-    
-    func updateDisplay() {
-        keyboardModel.passQuery(pressedKeySequence)
-        
-        typingSequence.text = keyboardModel.getTypingSequenceText()
-        
-        var candidateListText = keyboardModel.getCandidateListText()
-        let candidates = candidateList.arrangedSubviews as! [UIButton]
-        
-        let length = candidateListText.count < candidates.count ? candidateListText.count : candidates.count
-        
-        for i in 0...length {
-                candidates[i].setTitle(candidateListText[i], for: .normal)
-        }
-    }
-    
-    func resetDisplay() {
-        let candidates = candidateList.arrangedSubviews as! [UIButton]
-        for candidate in candidates {
-            candidate.setTitle("", for: .normal)
-            candidate.isHidden = true
-        }
-        
-        typingSequence.text = ""
-        typingSequence.isHidden = true
-    }
-    
-    func resetKeyboard() {
-        pressedKeySequence = []
-        userIsTyping = false
-        resetDisplay()
-    }
+//    @IBOutlet var candidateList: UIStackView!
+//    
+//    @IBOutlet var typingSequence: UILabel!
+//    
+//    var userIsTyping: Bool = false
+//    
+//    var pressedKeySequence = [String]()
+//    
+//    var keyboardModel = KeyboardModel()
+//    
+//    //MARK: Actions
+//    @IBAction func touchCandidateButton(_ sender: UIButton) {
+//        textDocumentProxy.insertText(sender.currentTitle!)
+//        
+//        resetKeyboard()
+//    }
+//    
+//    @IBAction func touchEnterButton(_ sender: UIButton) {
+//        if userIsTyping == true {
+//            let firstCandidate = candidateList.arrangedSubviews[0] as! UIButton
+//            textDocumentProxy.insertText(firstCandidate.currentTitle!)
+//            
+//            resetKeyboard()
+//        } else {
+//            textDocumentProxy.insertText("\n")
+//        }
+//    }
+//    
+//    @IBAction func touchBackspaceButton(_ sender: UIButton) {
+//        if userIsTyping == true {
+//            if pressedKeySequence.count == 1 {
+//                resetKeyboard()
+//            } else {
+//                pressedKeySequence.removeLast()
+//                updateDisplay()
+//            }
+//        } else {
+//            textDocumentProxy.deleteBackward()
+//        }
+//    }
+//    
+//    @IBAction func touchKey(_ sender: UIButton) {
+//        if userIsTyping == false {
+//            pressedKeySequence = [sender.currentTitle!]
+//            userIsTyping = true
+//            beginDisplay()
+//        } else {
+//            pressedKeySequence.append(sender.currentTitle!)
+//            updateDisplay()
+//        }
+//    }
+//    
+//    //MARK: Member functions
+//    func beginDisplay() {
+//        typingSequence.isHidden = false
+//        
+//        let candidates = candidateList.arrangedSubviews as! [UIButton]
+//        for candidate in candidates {
+//            candidate.isHidden = false
+//        }
+//        
+//        updateDisplay()
+//    }
+//    
+//    func updateDisplay() {
+//        keyboardModel.passQuery(pressedKeySequence)
+//        
+//        typingSequence.text = keyboardModel.getTypingSequenceText()
+//        
+//        var candidateListText = keyboardModel.getCandidateListText()
+//        let candidates = candidateList.arrangedSubviews as! [UIButton]
+//        
+//        let length = candidateListText.count < candidates.count ? candidateListText.count : candidates.count
+//        
+//        for i in 0...length {
+//            candidates[i].setTitle(candidateListText[i], for: .normal)
+//        }
+//    }
+//    
+//    func resetDisplay() {
+//        let candidates = candidateList.arrangedSubviews as! [UIButton]
+//        for candidate in candidates {
+//            candidate.setTitle("", for: .normal)
+//            candidate.isHidden = true
+//        }
+//        
+//        typingSequence.text = ""
+//        typingSequence.isHidden = true
+//    }
+//    
+//    func resetKeyboard() {
+//        pressedKeySequence = []
+//        userIsTyping = false
+//        resetDisplay()
+//    }
     
     
     //MARK: UIViewController
     override func viewDidLoad() {
+        print("Begin Loading:\n")
         super.viewDidLoad()
         
         loadKeyboardInterface()
         
-        resetDisplay()
+        //resetDisplay()
     }
     
     func loadKeyboardInterface() {
@@ -146,17 +147,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+//--------------------------------------------------------------------------------------------------
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
