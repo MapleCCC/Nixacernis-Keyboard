@@ -8,7 +8,7 @@
 
 import UIKit
 
-//// The header of UIInputViewController class, comment here for convenient reference.
+//// The header of UIInputViewController class
 //class UIInputViewController : UIViewController, UITextInputDelegate, NSObjectProtocol {
 //    
 //    var inputView: UIInputView!
@@ -28,11 +28,11 @@ class KeyboardViewController: UIInputViewController {
     //MARK: Properties
     var keyboardView: UIView!
     
-    
+    //MARK: Outlets
     @IBOutlet var nextKeyboardButton: UIButton!
     
     
-    
+    //MARK: UIInputViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +48,7 @@ class KeyboardViewController: UIInputViewController {
         nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), for: .touchUpInside)
     }
     
-    
+//------------------------------------------------------------------------------------
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
