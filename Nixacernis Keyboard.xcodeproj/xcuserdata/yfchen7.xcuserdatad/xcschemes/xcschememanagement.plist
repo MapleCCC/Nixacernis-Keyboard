@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Nixacernis Input Method.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Nixacernis Keyboard.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>6E705C1C2230285700A306B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E705C352230289C00A306B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
