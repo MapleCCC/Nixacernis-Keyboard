@@ -36,17 +36,67 @@ class KeyboardViewController: UIInputViewController {
     }
 
     //MARK: helper functions
-    func createButtonWithTitle(title: String) -> UIButton {
+//    func addAttributeTo(_ title: NSString) -> NSAttributedString {
+//        //let firstNewline = buttonTitle.firstIndex(of: "\n") ?? buttonTitle.endIndex
+//        //let firstLine = buttonTitle[..<firstNewline]
+//        
+//        var newlineRange: NSRange = title.range(of: "\n")
+//        var substring1 = ""
+//        var substring2 = ""
+//        
+//        if (newlineRange.location != NSNotFound) {
+//            substring1 = title.substring(to: newlineRange.location)
+//            substring2 = title.substring(from: newlineRange.location)
+//        }
+//        
+//        let font1: UIFont? = UIFont(name: "Arial", size: 25.0)
+//        let attrString1 = NSMutableAttributedString(
+//            string: substring1 as String,
+//            attributes: NSDictionary(
+//                object: font1!,
+//                forKey: NSFontAttributeName) as [NSObject: AnyObject])
+//        
+//        let font2: UIFont? = UIFont(name: "Arial", size: 15.0)
+//        let attrString2 = NSMutableAttributedString(
+//            string: substring2 as String,
+//            attributes: NSDictionary(
+//                object: font2!,
+//            forKey: NSFontAttributeName) as [NSObject: AnyObject])
+//        
+//        return attrString1 + attrString2
+//    }
+    
+    func customizeTitleOfButton( _ title: String, _ button: UIButton) {
+        
+//        //Simpler solution, if don't need two different font styles.
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)  //ofSize: 15
+        button.titleLabel?.lineBreakMode = .byWordWrapping
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(UIColor.darkGray, for: .normal)
+        
+        //More complicated solution, for more flexible font styles.
+        //
+        //We need to bridge between String, NSString and NSAttributedString due to API compatibility issue.
+        //Also because the XCode version currently available doesn't support Swift 5, hence a bunch of new syntax.
+//        button.titleLabel?.attributedText = addAttributeTo(title as NSString)
+//        button.titleLabel?.lineBreakMode = .byWordWrapping
+//        button.titleLabel?.textAlignment = .center
+    }
+    
+    func createButtonWithTitleAndImage(title: String, image: UIImage?) -> UIButton {
         let button = UIButton(type: .system)
         
-        button.setTitle(title, for: .normal)
-        button.sizeToFit()
+        //button.setImage(image, for: .normal)
+        //button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        
+        customizeTitleOfButton(title, button)
+        
         button.backgroundColor = UIColor(white: 1.0, alpha:1.0)
-        button.setTitleColor(UIColor.darkGray, for: .normal)
         
         button.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchUpInside)
         
@@ -95,7 +145,9 @@ class KeyboardViewController: UIInputViewController {
         let keyboardRowView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
         
         for buttonTitle in buttonTitles {
-            let button = createButtonWithTitle(title: buttonTitle)
+            //let buttonImage = UIImage(named: "a.png")
+            let buttonImage: UIImage? = nil
+            let button = createButtonWithTitleAndImage(title: buttonTitle, image: buttonImage)
             buttons.append(button)
             keyboardRowView.addSubview(button)
         }
@@ -159,7 +211,7 @@ class KeyboardViewController: UIInputViewController {
         // Perform custom UI setup here
         
         //  keyboard keys UI setup
-        let buttonTitles1 = [" H ", "Y Z", " O ", " U ", " E ", " S "]
+        let buttonTitles1 = ["HP\na ia ua", "YZ", " O ", " U ", " E ", " S "]
         let buttonTitles2 = [" G ", " A ", " N ", "J L", " I ", "B W"]
         let buttonTitles3 = ["P V", " D ", "M X", "C T", "K Q", "F R"]
         let buttonTitles4 = ["CHG", "SPACE", "RETURN", "BP"]

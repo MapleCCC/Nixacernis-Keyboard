@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E651D2722319E15001038B3 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E651D2622319E15001038B3 /* a.png */; };
+		6E651D2922319F23001038B3 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E651D2822319F23001038B3 /* KeyboardModel.swift */; };
 		6E705C212230285700A306B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E705C202230285700A306B1 /* AppDelegate.swift */; };
 		6E705C232230285700A306B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E705C222230285700A306B1 /* ViewController.swift */; };
 		6E705C262230285700A306B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E705C242230285700A306B1 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E651D2622319E15001038B3 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a.png; path = KeyImages/a.png; sourceTree = "<group>"; };
+		6E651D2822319F23001038B3 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
 		6E705C1D2230285700A306B1 /* Nixacernis Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nixacernis Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E705C202230285700A306B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E705C222230285700A306B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E651D2122319AA0001038B3 /* KeyImages */ = {
+			isa = PBXGroup;
+			children = (
+				6E651D2622319E15001038B3 /* a.png */,
+			);
+			name = KeyImages;
+			sourceTree = "<group>";
+		};
 		6E705C142230285700A306B1 = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +117,10 @@
 		6E705C372230289C00A306B1 /* Nixacernis Input Method */ = {
 			isa = PBXGroup;
 			children = (
+				6E651D2122319AA0001038B3 /* KeyImages */,
 				6E705C382230289C00A306B1 /* KeyboardViewController.swift */,
 				6E705C3A2230289C00A306B1 /* Info.plist */,
+				6E651D2822319F23001038B3 /* KeyboardModel.swift */,
 			);
 			path = "Nixacernis Input Method";
 			sourceTree = "<group>";
@@ -203,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E651D2722319E15001038B3 /* a.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E651D2922319F23001038B3 /* KeyboardModel.swift in Sources */,
 				6E705C392230289C00A306B1 /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +434,7 @@
 				6E705C312230285700A306B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E705C3E2230289C00A306B1 /* Build configuration list for PBXNativeTarget "Nixacernis Input Method" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +443,7 @@
 				6E705C402230289C00A306B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
