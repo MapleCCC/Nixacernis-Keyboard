@@ -85,6 +85,14 @@ class KeyboardViewController: UIInputViewController {
 //        button.titleLabel?.textAlignment = .center
     }
     
+    func imageWithImage(image: UIImage, scaledToSize newSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        image.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: newSize.width, height: newSize.height)))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
     func createButtonWithTitleAndImage(title: String, image: UIImage?) -> UIButton {
         let button = UIButton(type: .system)
         
@@ -95,6 +103,15 @@ class KeyboardViewController: UIInputViewController {
         button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         
         customizeTitleOfButton(title, button)
+        
+        if title == "RETURN" {
+            let returnImage = UIImage(named: "return.png")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
+            button.setImage(returnImage, for: .normal)
+        }
+        if title == "CHG" {
+            let nextKeyboardImage = UIImage(named: "nextKeyboard.png")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
+            button.setImage(nextKeyboardImage, for: .normal)
+        }
         
         button.backgroundColor = UIColor(white: 1.0, alpha:1.0)
         
@@ -211,10 +228,10 @@ class KeyboardViewController: UIInputViewController {
         // Perform custom UI setup here
         
         //  keyboard keys UI setup
-        let buttonTitles1 = ["HP\na ia ua", "YZ", " O ", " U ", " E ", " S "]
-        let buttonTitles2 = [" G ", " A ", " N ", "J L", " I ", "B W"]
-        let buttonTitles3 = ["P V", " D ", "M X", "C T", "K Q", "F R"]
-        let buttonTitles4 = ["CHG", "SPACE", "RETURN", "BP"]
+        let buttonTitles1 = ["HP\na ia ua", "Sh\nen in", "Zh\nang iao", "B\nao iong", "o X v\nuai uan", "MS\nie uo"]
+        let buttonTitles2 = ["L\nai ue", "D\nu", "Y\nenging", "WZ\ne", "JK\ni", "NR\nan"]
+        let buttonTitles3 = ["Ch\niang ui", "Q~\nian uang", "G\nei un", "CF\niu ou", "T\ner ong", "BP"]
+        let buttonTitles4 = ["CHG", "SPACE", "RETURN"]
         
         let row1 = createRowOfButtons(buttonTitles1)
         let row2 = createRowOfButtons(buttonTitles2)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3E6BE5223231B8007BEF7F /* nextKeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E6BE3223231B8007BEF7F /* nextKeyboard.png */; };
+		6E3E6BE6223231B8007BEF7F /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E6BE4223231B8007BEF7F /* return.png */; };
 		6E651D2722319E15001038B3 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E651D2622319E15001038B3 /* a.png */; };
 		6E651D2922319F23001038B3 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E651D2822319F23001038B3 /* KeyboardModel.swift */; };
 		6E705C212230285700A306B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E705C202230285700A306B1 /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E3E6BE3223231B8007BEF7F /* nextKeyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextKeyboard.png; path = KeyImages/nextKeyboard.png; sourceTree = "<group>"; };
+		6E3E6BE4223231B8007BEF7F /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = return.png; path = KeyImages/return.png; sourceTree = "<group>"; };
 		6E651D2622319E15001038B3 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a.png; path = KeyImages/a.png; sourceTree = "<group>"; };
 		6E651D2822319F23001038B3 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
 		6E705C1D2230285700A306B1 /* Nixacernis Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nixacernis Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,8 @@
 		6E651D2122319AA0001038B3 /* KeyImages */ = {
 			isa = PBXGroup;
 			children = (
+				6E3E6BE3223231B8007BEF7F /* nextKeyboard.png */,
+				6E3E6BE4223231B8007BEF7F /* return.png */,
 				6E651D2622319E15001038B3 /* a.png */,
 			);
 			name = KeyImages;
@@ -218,6 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E651D2722319E15001038B3 /* a.png in Resources */,
+				6E3E6BE5223231B8007BEF7F /* nextKeyboard.png in Resources */,
+				6E3E6BE6223231B8007BEF7F /* return.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
