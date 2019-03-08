@@ -8,7 +8,13 @@
 //  References: https://www.appdesignvault.com/ios-8-custom-keyboard-extension/
 
 import UIKit
-import Foundation
+
+// Magic numbers
+let ratioOfKeyboardHeightOverScreenHeight: CGFloat = 0.4
+let keyTitleFontSize: CGFloat = 25.0
+let keySubTitleFontSize: CGFloat = 15.0
+let titleStyleIsSimple = true
+let styleCustomizationBasedOnAttributedStringNotGraph = true
 
 class KeyboardViewController: UIInputViewController {
 
@@ -25,6 +31,7 @@ class KeyboardViewController: UIInputViewController {
         switch title {
         case "BP" :
             proxy.deleteBackward()
+            //delete with larger granularity when holding touching down for a certain time threshold.
         case "RETURN" :
             proxy.insertText("\n")
         case "SPACE" :
@@ -38,12 +45,11 @@ class KeyboardViewController: UIInputViewController {
 
     //MARK: helper functions
     
-//    //Crazy nasty objective-C code, never touch it anymore.
-//    //Instead, try to design beautiful images and insert them.
-//    func addAttributeTo(_ title: NSString) -> NSAttributedString {
-//        //let firstNewline = buttonTitle.firstIndex(of: "\n") ?? buttonTitle.endIndex
-//        //let firstLine = buttonTitle[..<firstNewline]
-//        
+    func addAttributeTo(_ title: NSString) -> NSAttributedString {
+        // Swift 4 features are not available for current XCode version in my computer.
+        //let firstNewline = buttonTitle.firstIndex(of: "\n") ?? buttonTitle.endIndex
+        //let firstLine = buttonTitle[..<firstNewline]
+        
 //        var newlineRange: NSRange = title.range(of: "\n")
 //        var substring1 = ""
 //        var substring2 = ""
@@ -53,11 +59,11 @@ class KeyboardViewController: UIInputViewController {
 //            substring2 = title.substring(from: newlineRange.location)
 //        }
 //        
-//        let font1: UIFont = UIFont(name: "Arial", size: 25.0)!
+//        let font1: UIFont = UIFont(name: "Arial", size: keyTitleFontSize)!
 //        let attrString1: NSAttributedString = NSMutableAttributedString(string: substring1 as String)
 //        attrString1.setValue(font1, forKey: font)
 //        
-//        let font2: UIFont? = UIFont(name: "Arial", size: 15.0)
+//        let font2: UIFont? = UIFont(name: "Arial", size: keySubTitleFontSize)
 //        let attrString2 = NSMutableAttributedString(
 //            string: substring2 as String,
 //            attributes: NSDictionary(
@@ -65,25 +71,29 @@ class KeyboardViewController: UIInputViewController {
 //            forKey: NSFontAttributeName) as [NSObject: AnyObject])
 //        
 //        return attrString1.append(attrString2)
-//    }
+        return NSAttributedString(string: "Goo")
+    }
     
     func customizeTitleOfButton(_ title: String, _ button: UIButton) {
         
-        //Simpler solution, if don't need two different font styles.
-        button.setTitle(title, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)  //ofSize: 15
-        button.titleLabel?.lineBreakMode = .byWordWrapping
-        button.titleLabel?.numberOfLines = 2
-        button.titleLabel?.textAlignment = .center
-        button.setTitleColor(UIColor.darkGray, for: .normal)
-        
-        //More complicated solution, for more flexible font styles.
-        //
-        //We need to bridge between String, NSString and NSAttributedString due to API compatibility issue.
-        //Also because the XCode version currently available doesn't support Swift 5, hence a bunch of new syntax.
-//        button.titleLabel?.attributedText = addAttributeTo(title as NSString)
-//        button.titleLabel?.lineBreakMode = .byWordWrapping
-//        button.titleLabel?.textAlignment = .center
+        switch titleStyleIsSimple {
+        case true:
+            //Simpler solution, only support restricted customization of title styles.
+            button.setTitle(title, for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: keyTitleFontSize)  //ofSize: 15
+            button.titleLabel?.lineBreakMode = .byWordWrapping
+            button.titleLabel?.numberOfLines = 2
+            button.titleLabel?.textAlignment = .center
+            button.setTitleColor(UIColor.darkGray, for: .normal)
+        case false:
+            //More complicated solution, support more flexible and enriched title styles customization.
+            //
+            //We need to bridge between String, NSString and NSAttributedString due to API compatibility issue.
+            //Also because the XCode version currently available doesn't support Swift 5, thus a bunch of new syntax.
+            button.titleLabel?.attributedText = addAttributeTo(title as NSString)
+            button.titleLabel?.lineBreakMode = .byWordWrapping
+            button.titleLabel?.textAlignment = .center
+        }
     }
     
     func imageWithImage(image: UIImage, scaledToSize newSize: CGSize) -> UIImage {
@@ -97,23 +107,14 @@ class KeyboardViewController: UIInputViewController {
     func createButtonWithTitleAndImage(title: String, image: UIImage?) -> UIButton {
         let button = UIButton(type: .system)
         
-        //button.setImage(image, for: .normal)
-        button.sizeToFit()
+        //button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
-        
         button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         
-        if title == "RETURN" {
-            let returnImage: UIImage = UIImage(named: "a.png")!.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
-            button.setBackgroundImage(returnImage, for: .normal)
-        } else if title == "CHG" {
-            let nextKeyboardImage: UIImage = UIImage(named: "a.png")!.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
-            button.setBackgroundImage(nextKeyboardImage, for: .normal)
-        } else {
-            customizeTitleOfButton(title, button)
-        }
+        button.setBackgroundImage(image, for: .normal)
+        customizeTitleOfButton(title, button)
         
-        button.backgroundColor = UIColor(white: 1.0, alpha:1.0)
+        //button.backgroundColor = UIColor(white: 1.0, alpha:1.0)
         
         button.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchUpInside)
         
@@ -162,8 +163,7 @@ class KeyboardViewController: UIInputViewController {
         let keyboardRowView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
         
         for buttonTitle in buttonTitles {
-            //let buttonImage = UIImage(named: "a.png")
-            let buttonImage: UIImage? = nil
+            let buttonImage = UIImage(named: "\(buttonTitle).png")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
             let button = createButtonWithTitleAndImage(title: buttonTitle, image: buttonImage)
             buttons.append(button)
             keyboardRowView.addSubview(button)
@@ -174,44 +174,44 @@ class KeyboardViewController: UIInputViewController {
         return keyboardRowView
     }
     
-    func addConstraintsToInputView(inputView: UIView, rowViews: [UIView]){
+    func addConstraintsToRowViews(mainView: UIView, rowViews: [UIView]){
         for (index, rowView) in rowViews.enumerated() {
             
             // adds a 1px constraint to the left and right of the row in relation to the main view
-            let rightSideConstraint = NSLayoutConstraint(item: rowView, attribute: .right, relatedBy: .equal, toItem: inputView, attribute: .right, multiplier: 1.0, constant: -1)
+            let rightSideConstraint = NSLayoutConstraint(item: rowView, attribute: .right, relatedBy: .equal, toItem: mainView, attribute: .right, multiplier: 1.0, constant: -1)
             
-            let leftConstraint = NSLayoutConstraint(item: rowView, attribute: .left, relatedBy: .equal, toItem: inputView, attribute: .left, multiplier: 1.0, constant: 1)
+            let leftConstraint = NSLayoutConstraint(item: rowView, attribute: .left, relatedBy: .equal, toItem: mainView, attribute: .left, multiplier: 1.0, constant: 1)
             
-            inputView.addConstraints([leftConstraint, rightSideConstraint])
+            mainView.addConstraints([leftConstraint, rightSideConstraint])
             
             // adds a 0px constraint between the each row and the next one below and above it.
             var topConstraint: NSLayoutConstraint
             
             if index == 0 {
-                topConstraint = NSLayoutConstraint(item: rowView, attribute: .top, relatedBy: .equal, toItem: inputView, attribute: .top, multiplier: 1.0, constant: 0)
+                topConstraint = NSLayoutConstraint(item: rowView, attribute: .top, relatedBy: .equal, toItem: mainView, attribute: .top, multiplier: 1.0, constant: 0)
             } else{
                 let prevRow = rowViews[index-1]
                 topConstraint = NSLayoutConstraint(item: rowView, attribute: .top, relatedBy: .equal, toItem: prevRow, attribute: .bottom, multiplier: 1.0, constant: 0)
     
-                // adds constraint enforce rows to have equal height.
+                // adds constraint to enforce rows to have equal height.
                 let firstRow = rowViews[0]
                 let heightConstraint = NSLayoutConstraint(item: firstRow, attribute: .height, relatedBy: .equal, toItem: rowView, attribute: .height, multiplier: 1.0, constant: 0)
                 
-                inputView.addConstraint(heightConstraint)
+                mainView.addConstraint(heightConstraint)
             }
             
-            inputView.addConstraint(topConstraint)
+            mainView.addConstraint(topConstraint)
             
             var bottomConstraint: NSLayoutConstraint
             
             if index == rowViews.count - 1 {
-                bottomConstraint = NSLayoutConstraint(item: rowView, attribute: .bottom, relatedBy: .equal, toItem: inputView, attribute: .bottom, multiplier: 1.0, constant: 0)
+                bottomConstraint = NSLayoutConstraint(item: rowView, attribute: .bottom, relatedBy: .equal, toItem: mainView, attribute: .bottom, multiplier: 1.0, constant: 0)
             }else{
                 let nextRow = rowViews[index+1]
                 bottomConstraint = NSLayoutConstraint(item: rowView, attribute: .bottom, relatedBy: .equal, toItem: nextRow, attribute: .top, multiplier: 1.0, constant: 0)
             }
             
-            inputView.addConstraint(bottomConstraint)
+            mainView.addConstraint(bottomConstraint)
         }
     }
     
@@ -227,7 +227,16 @@ class KeyboardViewController: UIInputViewController {
         
         // Perform custom UI setup here
         
-        //  keyboard keys UI setup
+        // keyboard view size setup
+        let screenSize = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+        let keyboardHeight = screenHeight * ratioOfKeyboardHeightOverScreenHeight;
+        let heightConstraint = NSLayoutConstraint(item: self.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 0.0, constant: keyboardHeight)
+        self.view.addConstraint(heightConstraint)
+        
+        //  keyboard keys grid UI setup
+        //let keyboardGridView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 250))
+        
         let buttonTitles1 = ["HP\na ia ua", "Sh\nen in", "Zh\nang iao", "B\nao iong", "o X v\nuai uan", "MS\nie uo"]
         let buttonTitles2 = ["L\nai ue", "D\nu", "Y\nenging", "WZ\ne", "JK\ni", "NR\nan"]
         let buttonTitles3 = ["Ch\niang ui", "Q~\nian uang", "G\nei un", "CF\niu ou", "T\ner ong", "BP"]
@@ -248,7 +257,21 @@ class KeyboardViewController: UIInputViewController {
         row3.translatesAutoresizingMaskIntoConstraints = false
         row4.translatesAutoresizingMaskIntoConstraints = false
         
-        addConstraintsToInputView(inputView: self.view, rowViews: [row1, row2, row3, row4])
+        addConstraintsToRowViews(mainView: self.view, rowViews: [row1, row2, row3, row4])
+        
+//        // keyboard accessory bar UI setup
+////        let accessoryBarView = createRowOfButtons(["1","2","3"])
+////        
+////        self.view.addSubview(accessoryBarView)
+//        self.view.addSubview(keyboardGridView)
+//        
+////        accessoryBarView.translatesAutoresizingMaskIntoConstraints = false
+//        keyboardGridView.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        addConstraintsToRowViews(mainView: self.view, rowViews: [keyboardGridView])
+        
+//        let appearance = UIButton.appearance()
+//        appearance.autoresizesSubviews = true
         
 //        // nextKeyboardButton UI setup
 //        self.nextKeyboardButton = UIButton(type: .system)
