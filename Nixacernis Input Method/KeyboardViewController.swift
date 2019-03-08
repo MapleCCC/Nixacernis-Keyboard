@@ -8,6 +8,7 @@
 //  References: https://www.appdesignvault.com/ios-8-custom-keyboard-extension/
 
 import UIKit
+import Foundation
 
 class KeyboardViewController: UIInputViewController {
 
@@ -36,6 +37,9 @@ class KeyboardViewController: UIInputViewController {
     }
 
     //MARK: helper functions
+    
+//    //Crazy nasty objective-C code, never touch it anymore.
+//    //Instead, try to design beautiful images and insert them.
 //    func addAttributeTo(_ title: NSString) -> NSAttributedString {
 //        //let firstNewline = buttonTitle.firstIndex(of: "\n") ?? buttonTitle.endIndex
 //        //let firstLine = buttonTitle[..<firstNewline]
@@ -49,12 +53,9 @@ class KeyboardViewController: UIInputViewController {
 //            substring2 = title.substring(from: newlineRange.location)
 //        }
 //        
-//        let font1: UIFont? = UIFont(name: "Arial", size: 25.0)
-//        let attrString1 = NSMutableAttributedString(
-//            string: substring1 as String,
-//            attributes: NSDictionary(
-//                object: font1!,
-//                forKey: NSFontAttributeName) as [NSObject: AnyObject])
+//        let font1: UIFont = UIFont(name: "Arial", size: 25.0)!
+//        let attrString1: NSAttributedString = NSMutableAttributedString(string: substring1 as String)
+//        attrString1.setValue(font1, forKey: font)
 //        
 //        let font2: UIFont? = UIFont(name: "Arial", size: 15.0)
 //        let attrString2 = NSMutableAttributedString(
@@ -63,12 +64,12 @@ class KeyboardViewController: UIInputViewController {
 //                object: font2!,
 //            forKey: NSFontAttributeName) as [NSObject: AnyObject])
 //        
-//        return attrString1 + attrString2
+//        return attrString1.append(attrString2)
 //    }
     
-    func customizeTitleOfButton( _ title: String, _ button: UIButton) {
+    func customizeTitleOfButton(_ title: String, _ button: UIButton) {
         
-//        //Simpler solution, if don't need two different font styles.
+        //Simpler solution, if don't need two different font styles.
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)  //ofSize: 15
         button.titleLabel?.lineBreakMode = .byWordWrapping
@@ -97,20 +98,19 @@ class KeyboardViewController: UIInputViewController {
         let button = UIButton(type: .system)
         
         //button.setImage(image, for: .normal)
-        //button.sizeToFit()
+        button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         
-        customizeTitleOfButton(title, button)
-        
         if title == "RETURN" {
-            let returnImage = UIImage(named: "return.png")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
-            button.setImage(returnImage, for: .normal)
-        }
-        if title == "CHG" {
-            let nextKeyboardImage = UIImage(named: "nextKeyboard.png")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
-            button.setImage(nextKeyboardImage, for: .normal)
+            let returnImage: UIImage = UIImage(named: "a.png")!.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
+            button.setBackgroundImage(returnImage, for: .normal)
+        } else if title == "CHG" {
+            let nextKeyboardImage: UIImage = UIImage(named: "a.png")!.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
+            button.setBackgroundImage(nextKeyboardImage, for: .normal)
+        } else {
+            customizeTitleOfButton(title, button)
         }
         
         button.backgroundColor = UIColor(white: 1.0, alpha:1.0)
