@@ -11,12 +11,17 @@ import UIKit
 
 // Magic numbers
 let ratioOfKeyboardHeightOverScreenHeight: CGFloat = 0.4
-let keyTitleFontSize: CGFloat = 25.0
+let keyTitleFontSize: CGFloat = 20.0
 let keySubTitleFontSize: CGFloat = 15.0
 let titleStyleIsSimple = true
 let styleCustomizationBasedOnAttributedStringNotGraph = true
 
 class KeyboardViewController: UIInputViewController {
+    //MARK: Properties
+    var keyboardModel = KeyboardModel()
+    var candidateWord = String()
+    var candidateButton = UIButton()
+    var keySequence = [String]()
 
     //MARK: Oulets
     //@IBOutlet var nextKeyboardButton: UIButton!
@@ -29,17 +34,41 @@ class KeyboardViewController: UIInputViewController {
         let proxy = textDocumentProxy
         
         switch title {
-        case "BP" :
-            proxy.deleteBackward()
-            //delete with larger granularity when holding touching down for a certain time threshold.
-        case "RETURN" :
-            proxy.insertText("\n")
-        case "SPACE" :
-            proxy.insertText(" ")
-        case "CHG" :
+//        case "last":
+//            currentIndex = currentIndex - 1
+//            buttonHandler["candidate"].title = candidateWord[currentIndex]
+//        case "next":
+//
+//        case "BP" : //dont consider
+//            if keySequence.count == 0 {
+//                proxy.deleteBackward()
+//            }
+//            else {
+//                keySequence.removeLast()
+//            }
+//            //delete with larger granularity when holding touching down for a certain time threshold.
+//        case "RETURN" : //dont consider
+//            proxy.insertText("\n")
+//        case "SPACE" : // dont consider
+//            proxy.insertText(" ")
+        case "Clear": // completed
+            keySequence = []
+            candidateButton.setTitle("", for: .normal)
+        case "CHG" : // completed
             advanceToNextInputMode()
         default :
-            proxy.insertText(title)
+            if title[title.startIndex] == ":" {
+                var titleCopy: String = title
+                titleCopy.removeFirst()
+                proxy.insertText(titleCopy)
+                button.setTitle(":", for: .normal)
+                keySequence = []
+            }
+            else {
+                keySequence.append(title)
+                candidateWord = ":" + keyboardModel.transliterate(keySequence)
+                candidateButton.setTitle(candidateWord, for: .normal)
+            }
         }
     }
 
@@ -175,6 +204,23 @@ class KeyboardViewController: UIInputViewController {
         return keyboardRowView
     }
     
+    func createRowOfButtons2(_ buttonTitles: [String]) -> UIView {
+        var buttons = [UIButton]()
+        let keyboardRowView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        
+        for buttonTitle in buttonTitles {
+            let buttonImage = UIImage(named: "\(buttonTitle).jpg")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
+            let button = createButtonWithTitleAndImage(title: buttonTitle, image: buttonImage)
+            buttons.append(button)
+            candidateButton = button
+            keyboardRowView.addSubview(button)
+        }
+        
+        addIndividualButtonConstraints(buttons: buttons, mainView: keyboardRowView)
+        
+        return keyboardRowView
+    }
+    
     func addConstraintsToRowViews(mainView: UIView, rowViews: [UIView]){
         for (index, rowView) in rowViews.enumerated() {
             
@@ -238,27 +284,31 @@ class KeyboardViewController: UIInputViewController {
         //  keyboard keys grid UI setup
         //let keyboardGridView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 250))
         
+        let buttonTitles0 = [":"]
         let buttonTitles1 = ["1", "2", "3", "4", "5", "6"]
         let buttonTitles2 = ["7", "8", "9", "10", "11", "12"]
         let buttonTitles3 = ["13", "14", "15", "16", "17", "18"]
-        let buttonTitles4 = ["CHG", "SPACE", "BP"]
+        let buttonTitles4 = ["CHG", "Clear"]
         
+        let row0 = createRowOfButtons2(buttonTitles0)
         let row1 = createRowOfButtons(buttonTitles1)
         let row2 = createRowOfButtons(buttonTitles2)
         let row3 = createRowOfButtons(buttonTitles3)
         let row4 = createRowOfButtons(buttonTitles4)
         
+        self.view.addSubview(row0)
         self.view.addSubview(row1)
         self.view.addSubview(row2)
         self.view.addSubview(row3)
         self.view.addSubview(row4)
         
+        row0.translatesAutoresizingMaskIntoConstraints = false
         row1.translatesAutoresizingMaskIntoConstraints = false
         row2.translatesAutoresizingMaskIntoConstraints = false
         row3.translatesAutoresizingMaskIntoConstraints = false
         row4.translatesAutoresizingMaskIntoConstraints = false
         
-        addConstraintsToRowViews(mainView: self.view, rowViews: [row1, row2, row3, row4])
+        addConstraintsToRowViews(mainView: self.view, rowViews: [row0, row1, row2, row3, row4])
         
 //        // keyboard accessory bar UI setup
 ////        let accessoryBarView = createRowOfButtons(["1","2","3"])

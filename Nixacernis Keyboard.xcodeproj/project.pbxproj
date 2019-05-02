@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AF52078227B8F2A0046C101 /* 18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52066227B8F290046C101 /* 18.jpg */; };
+		0AF52079227B8F2A0046C101 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52067227B8F290046C101 /* 8.jpg */; };
+		0AF5207A227B8F2A0046C101 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52068227B8F290046C101 /* 6.jpg */; };
+		0AF5207B227B8F2A0046C101 /* 17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52069227B8F290046C101 /* 17.jpg */; };
+		0AF5207C227B8F2A0046C101 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF5206A227B8F290046C101 /* 1.jpg */; };
+		0AF5207D227B8F2A0046C101 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF5206B227B8F290046C101 /* 7.jpg */; };
+		0AF5207E227B8F2A0046C101 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF5206C227B8F290046C101 /* 15.jpg */; };
+		0AF5207F227B8F2A0046C101 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF5206D227B8F290046C101 /* 2.jpg */; };
+		0AF52080227B8F2A0046C101 /* 14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF5206E227B8F290046C101 /* 14.jpg */; };
+		0AF52081227B8F2A0046C101 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF5206F227B8F290046C101 /* 9.jpg */; };
+		0AF52082227B8F2A0046C101 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52070227B8F290046C101 /* 3.jpg */; };
+		0AF52083227B8F2A0046C101 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52071227B8F290046C101 /* 11.jpg */; };
+		0AF52084227B8F2A0046C101 /* 16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52072227B8F2A0046C101 /* 16.jpg */; };
+		0AF52085227B8F2A0046C101 /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52073227B8F2A0046C101 /* 13.jpg */; };
+		0AF52086227B8F2A0046C101 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52074227B8F2A0046C101 /* 4.jpg */; };
+		0AF52087227B8F2A0046C101 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52075227B8F2A0046C101 /* 12.jpg */; };
+		0AF52088227B8F2A0046C101 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52076227B8F2A0046C101 /* 5.jpg */; };
+		0AF52089227B8F2A0046C101 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AF52077227B8F2A0046C101 /* 10.jpg */; };
 		6E3E6BE5223231B8007BEF7F /* nextKeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E6BE3223231B8007BEF7F /* nextKeyboard.png */; };
 		6E3E6BE6223231B8007BEF7F /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E6BE4223231B8007BEF7F /* return.png */; };
 		6E651D2722319E15001038B3 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E651D2622319E15001038B3 /* a.png */; };
@@ -45,6 +63,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AF52066227B8F290046C101 /* 18.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 18.jpg; path = KeyImages/18.jpg; sourceTree = "<group>"; };
+		0AF52067227B8F290046C101 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 8.jpg; path = KeyImages/8.jpg; sourceTree = "<group>"; };
+		0AF52068227B8F290046C101 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.jpg; path = KeyImages/6.jpg; sourceTree = "<group>"; };
+		0AF52069227B8F290046C101 /* 17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 17.jpg; path = KeyImages/17.jpg; sourceTree = "<group>"; };
+		0AF5206A227B8F290046C101 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = KeyImages/1.jpg; sourceTree = "<group>"; };
+		0AF5206B227B8F290046C101 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7.jpg; path = KeyImages/7.jpg; sourceTree = "<group>"; };
+		0AF5206C227B8F290046C101 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 15.jpg; path = KeyImages/15.jpg; sourceTree = "<group>"; };
+		0AF5206D227B8F290046C101 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = KeyImages/2.jpg; sourceTree = "<group>"; };
+		0AF5206E227B8F290046C101 /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 14.jpg; path = KeyImages/14.jpg; sourceTree = "<group>"; };
+		0AF5206F227B8F290046C101 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9.jpg; path = KeyImages/9.jpg; sourceTree = "<group>"; };
+		0AF52070227B8F290046C101 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = KeyImages/3.jpg; sourceTree = "<group>"; };
+		0AF52071227B8F290046C101 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 11.jpg; path = KeyImages/11.jpg; sourceTree = "<group>"; };
+		0AF52072227B8F2A0046C101 /* 16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 16.jpg; path = KeyImages/16.jpg; sourceTree = "<group>"; };
+		0AF52073227B8F2A0046C101 /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 13.jpg; path = KeyImages/13.jpg; sourceTree = "<group>"; };
+		0AF52074227B8F2A0046C101 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = KeyImages/4.jpg; sourceTree = "<group>"; };
+		0AF52075227B8F2A0046C101 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 12.jpg; path = KeyImages/12.jpg; sourceTree = "<group>"; };
+		0AF52076227B8F2A0046C101 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.jpg; path = KeyImages/5.jpg; sourceTree = "<group>"; };
+		0AF52077227B8F2A0046C101 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 10.jpg; path = KeyImages/10.jpg; sourceTree = "<group>"; };
 		6E3E6BE3223231B8007BEF7F /* nextKeyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextKeyboard.png; path = KeyImages/nextKeyboard.png; sourceTree = "<group>"; };
 		6E3E6BE4223231B8007BEF7F /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = return.png; path = KeyImages/return.png; sourceTree = "<group>"; };
 		6E651D2622319E15001038B3 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a.png; path = KeyImages/a.png; sourceTree = "<group>"; };
@@ -82,6 +118,24 @@
 		6E651D2122319AA0001038B3 /* KeyImages */ = {
 			isa = PBXGroup;
 			children = (
+				0AF5206A227B8F290046C101 /* 1.jpg */,
+				0AF5206D227B8F290046C101 /* 2.jpg */,
+				0AF52070227B8F290046C101 /* 3.jpg */,
+				0AF52074227B8F2A0046C101 /* 4.jpg */,
+				0AF52076227B8F2A0046C101 /* 5.jpg */,
+				0AF52068227B8F290046C101 /* 6.jpg */,
+				0AF5206B227B8F290046C101 /* 7.jpg */,
+				0AF52067227B8F290046C101 /* 8.jpg */,
+				0AF5206F227B8F290046C101 /* 9.jpg */,
+				0AF52077227B8F2A0046C101 /* 10.jpg */,
+				0AF52071227B8F290046C101 /* 11.jpg */,
+				0AF52075227B8F2A0046C101 /* 12.jpg */,
+				0AF52073227B8F2A0046C101 /* 13.jpg */,
+				0AF5206E227B8F290046C101 /* 14.jpg */,
+				0AF5206C227B8F290046C101 /* 15.jpg */,
+				0AF52072227B8F2A0046C101 /* 16.jpg */,
+				0AF52069227B8F290046C101 /* 17.jpg */,
+				0AF52066227B8F290046C101 /* 18.jpg */,
 				6E3E6BE3223231B8007BEF7F /* nextKeyboard.png */,
 				6E3E6BE4223231B8007BEF7F /* return.png */,
 				6E651D2622319E15001038B3 /* a.png */,
@@ -181,10 +235,12 @@
 				TargetAttributes = {
 					6E705C1C2230285700A306B1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R647CFXUR4;
 						ProvisioningStyle = Automatic;
 					};
 					6E705C352230289C00A306B1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R647CFXUR4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -223,8 +279,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF52083227B8F2A0046C101 /* 11.jpg in Resources */,
+				0AF52089227B8F2A0046C101 /* 10.jpg in Resources */,
+				0AF52088227B8F2A0046C101 /* 5.jpg in Resources */,
+				0AF52081227B8F2A0046C101 /* 9.jpg in Resources */,
+				0AF5207F227B8F2A0046C101 /* 2.jpg in Resources */,
+				0AF5207A227B8F2A0046C101 /* 6.jpg in Resources */,
+				0AF5207B227B8F2A0046C101 /* 17.jpg in Resources */,
+				0AF52085227B8F2A0046C101 /* 13.jpg in Resources */,
+				0AF52086227B8F2A0046C101 /* 4.jpg in Resources */,
+				0AF52079227B8F2A0046C101 /* 8.jpg in Resources */,
+				0AF52082227B8F2A0046C101 /* 3.jpg in Resources */,
 				6E651D2722319E15001038B3 /* a.png in Resources */,
 				6E3E6BE5223231B8007BEF7F /* nextKeyboard.png in Resources */,
+				0AF52080227B8F2A0046C101 /* 14.jpg in Resources */,
+				0AF5207E227B8F2A0046C101 /* 15.jpg in Resources */,
+				0AF5207C227B8F2A0046C101 /* 1.jpg in Resources */,
+				0AF52087227B8F2A0046C101 /* 12.jpg in Resources */,
+				0AF52084227B8F2A0046C101 /* 16.jpg in Resources */,
+				0AF5207D227B8F2A0046C101 /* 7.jpg in Resources */,
+				0AF52078227B8F2A0046C101 /* 18.jpg in Resources */,
 				6E3E6BE6223231B8007BEF7F /* return.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +452,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R647CFXUR4;
 				INFOPLIST_FILE = "Nixacernis Keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PageAndDeason.Nixacernis-Keyboard";
@@ -391,6 +466,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R647CFXUR4;
 				INFOPLIST_FILE = "Nixacernis Keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PageAndDeason.Nixacernis-Keyboard";
@@ -402,6 +478,7 @@
 		6E705C3F2230289C00A306B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = R647CFXUR4;
 				INFOPLIST_FILE = "Nixacernis Input Method/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PageAndDeason.Nixacernis-Keyboard.Nixacernis-Input-Method";
@@ -414,6 +491,7 @@
 		6E705C402230289C00A306B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = R647CFXUR4;
 				INFOPLIST_FILE = "Nixacernis Input Method/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PageAndDeason.Nixacernis-Keyboard.Nixacernis-Input-Method";

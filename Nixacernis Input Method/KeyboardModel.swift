@@ -9,5 +9,9 @@
 import Foundation
 
 class KeyboardModel {
+    func transliterate(_ key_list: [String]) -> String {
+        return key_list.joined(separator: "-")
+    }
+    
     
 }
