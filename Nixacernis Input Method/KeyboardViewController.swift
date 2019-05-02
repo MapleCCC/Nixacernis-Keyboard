@@ -81,9 +81,9 @@ class KeyboardViewController: UIInputViewController {
             //Simpler solution, only support restricted customization of title styles.
             button.setTitle(title, for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: keyTitleFontSize)  //ofSize: 15
-            button.titleLabel?.lineBreakMode = .byWordWrapping
-            button.titleLabel?.numberOfLines = 2
-            button.titleLabel?.textAlignment = .center
+//            button.titleLabel?.lineBreakMode = .byWordWrapping
+//            button.titleLabel?.numberOfLines = 2
+//            button.titleLabel?.textAlignment = .center
             button.setTitleColor(UIColor.darkGray, for: .normal)
         case false:
             //More complicated solution, support more flexible and enriched title styles customization.
@@ -107,14 +107,15 @@ class KeyboardViewController: UIInputViewController {
     func createButtonWithTitleAndImage(title: String, image: UIImage?) -> UIButton {
         let button = UIButton(type: .system)
         
-        //button.sizeToFit()
+        button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 20)
         
         button.setBackgroundImage(image, for: .normal)
+        
         customizeTitleOfButton(title, button)
         
-        //button.backgroundColor = UIColor(white: 1.0, alpha:1.0)
+//        button.backgroundColor = UIColor(white: 1.0, alpha:1.0)
         
         button.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchUpInside)
         
@@ -163,7 +164,7 @@ class KeyboardViewController: UIInputViewController {
         let keyboardRowView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
         
         for buttonTitle in buttonTitles {
-            let buttonImage = UIImage(named: "\(buttonTitle).png")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
+            let buttonImage = UIImage(named: "\(buttonTitle).jpg")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), resizingMode: UIImageResizingMode.stretch)
             let button = createButtonWithTitleAndImage(title: buttonTitle, image: buttonImage)
             buttons.append(button)
             keyboardRowView.addSubview(button)
@@ -237,10 +238,10 @@ class KeyboardViewController: UIInputViewController {
         //  keyboard keys grid UI setup
         //let keyboardGridView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 250))
         
-        let buttonTitles1 = ["HP\na ia ua", "Sh\nen in", "Zh\nang iao", "B\nao iong", "o X v\nuai uan", "MS\nie uo"]
-        let buttonTitles2 = ["L\nai ue", "D\nu", "Y\nenging", "WZ\ne", "JK\ni", "NR\nan"]
-        let buttonTitles3 = ["Ch\niang ui", "Q~\nian uang", "G\nei un", "CF\niu ou", "T\ner ong", "BP"]
-        let buttonTitles4 = ["CHG", "SPACE", "RETURN"]
+        let buttonTitles1 = ["1", "2", "3", "4", "5", "6"]
+        let buttonTitles2 = ["7", "8", "9", "10", "11", "12"]
+        let buttonTitles3 = ["13", "14", "15", "16", "17", "18"]
+        let buttonTitles4 = ["CHG", "SPACE", "BP"]
         
         let row1 = createRowOfButtons(buttonTitles1)
         let row2 = createRowOfButtons(buttonTitles2)
